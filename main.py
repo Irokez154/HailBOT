@@ -2,9 +2,7 @@ import logging
 from telegram import Update, Bot
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-# Конфигурация
 BOT_TOKEN = "7020279588:AAER0SU6QqAeqTPQfHfijWNJ5fOeKsVLXrk"
-USER_ID = 1688425359
 
 # Обработчики команд
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -22,7 +20,6 @@ async def forecast(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "This is a sample forecast. Full automation will deliver real-time hail reports here every day at 13:00 EDT.")
 
-# Основной запуск
 def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
